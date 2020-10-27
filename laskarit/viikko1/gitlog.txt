@@ -1,0 +1,113 @@
+commit 580771d6cfa913ce7fe879e3ba12b4eb8011bfdf
+Author: Jarkko Myllylä <jarkko.myllyla@outlook.com>
+Date:   Tue Oct 27 22:46:31 2020 +0200
+
+    muutettiin filejä
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit ba80c3bbbc3dc6a70f5bd7925311945dd9b2f3a0
+Author: Jarkko Myllylä <jarkko.myllyla@outlook.com>
+Date:   Tue Oct 27 22:41:06 2020 +0200
+
+    lisättiin tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 2bc332f2c4830e3d86b4d383eff306b0910d51ca
+Author: Jarkko Myllylä <jarkko.myllyla@outlook.com>
+Date:   Tue Oct 27 22:26:24 2020 +0200
+
+    muutettiin sisältöjä
+
+ eka.txt    | 53 ++---------------------------------------------------
+ kolmas.txt |  2 +-
+ 2 files changed, 3 insertions(+), 52 deletions(-)
+
+commit 0e7496c9882bbeeeaa0e46764f138c896fabbb69
+Author: Jarkko Myllylä <jarkko.myllyla@outlook.com>
+Date:   Tue Oct 27 22:21:07 2020 +0200
+
+    muutettiin nimiä
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 77eef69bf54692f69767715f035ed4ffcb999cee
+Author: Jarkko Myllylä <jarkko.myllyla@outlook.com>
+Date:   Tue Oct 27 22:18:12 2020 +0200
+
+    poistettiin toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 38ba607359aa92a17f45e41bd4af7e3ad0c6234a
+Author: Jarkko Myllylä <jarkko.myllyla@outlook.com>
+Date:   Tue Oct 27 22:12:19 2020 +0200
+
+    muutettiin tekstiä
+
+ tiedosto.txt | 30 +-----------------------------
+ 1 file changed, 1 insertion(+), 29 deletions(-)
+
+commit 043956c9b54ae772b81cd41b9b72afa7b2f2e66f
+Author: Jarkko Myllylä <jarkko.myllyla@outlook.com>
+Date:   Tue Oct 27 22:10:08 2020 +0200
+
+    lisätty tekstiä
+
+ tiedosto.txt | 453 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 452 insertions(+), 1 deletion(-)
+
+commit 76cb169065474559852a39e830462395bbbf091a
+Author: Jarkko Myllylä <jarkko.myllyla@outlook.com>
+Date:   Tue Oct 27 22:02:38 2020 +0200
+
+    lisätty stuff
+
+ stuff/stuff.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 03e01a2f755b1e0abab7f0a06950eeae326ddec7
+Author: Jarkko Myllylä <jarkko.myllyla@outlook.com>
+Date:   Tue Oct 27 21:59:57 2020 +0200
+
+    muutoksia toinen.txt ja kolmas.txt
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit dedb78f3c63598bf6e9454b3fa38d3960d9bcfd8
+Author: Jarkko Myllylä <jarkko.myllyla@outlook.com>
+Date:   Tue Oct 27 21:57:50 2020 +0200
+
+    kolmas.txt lisätty
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 16fd261532a3c802f3c5d1879b3369307559e3d6
+Author: Jarkko Myllylä <jarkko.myllyla@outlook.com>
+Date:   Tue Oct 27 21:48:14 2020 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit dda781383949388eb8c609500217116efc8eeb10
+Author: Jarkko Myllylä <jarkko.myllyla@outlook.com>
+Date:   Tue Oct 27 21:44:27 2020 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
