@@ -1,5 +1,5 @@
 # Ohjelmistotekniikka harjoitustyö
-*Syksy* **2020** 
+*Syksy* **2020** toinen periodi 
 ## Tehtävät
 ### Viikko 1
 [gitlog.txt](https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
