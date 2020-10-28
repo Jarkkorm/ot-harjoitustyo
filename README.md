@@ -1,4 +1,4 @@
-# Ohjelmistotekniikka
+# Ohjelmistotekniikka harjoitustyö
 *Syksy* **2020** 
 ## Tehtävät
 ### Viikko 1
