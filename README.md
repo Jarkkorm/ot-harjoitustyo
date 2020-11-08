@@ -1,6 +1,8 @@
 # Ohjelmistotekniikka harjoitustyö
 *Syksy* **2020** toinen periodi 
+
 [tuntikirjanpito.md](https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/tuntikirjanpito.md)
+
 [vaatimusmaarittely.md](https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/vaatimusmaarittely.md)
 
 ## Tehtävät
