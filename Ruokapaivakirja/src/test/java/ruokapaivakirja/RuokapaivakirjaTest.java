@@ -1,15 +1,20 @@
+package ruokapaivakirja;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import ruokapaivakirja.domain.Meal;
 
 /**
  *
  * @author jarkko
  */
 public class RuokapaivakirjaTest {
+    
+    Meal meal;
     
     public RuokapaivakirjaTest() {
     }
@@ -30,9 +35,9 @@ public class RuokapaivakirjaTest {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    @Test
+    public void mealinNimiOikeinTest() {
+        meal = new Meal("Makaronilaatikko");
+        assertEquals("Makaronilaatikko", meal.getName());
+    }
 }
