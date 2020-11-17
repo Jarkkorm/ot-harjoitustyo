@@ -1,15 +1,27 @@
-# Ohjelmistotekniikka harjoitustyö
-*Syksy* **2020** toinen periodi 
+# Ruokapäiväkirja
+Sovelluksen avulla on mahdollista pitää ruokapäiväkirjaa 
 
+## Dokumentaatio
 [tuntikirjanpito.md](https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/tuntikirjanpito.md)
 
 [vaatimusmaarittely.md](https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/vaatimusmaarittely.md)
 
-## Tehtävät
-### Viikko 1
-[gitlog.txt](https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+##Komentorivitoiminnot
 
-[komentorivi.txt](https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+Ohjelman saa suoritettua komennolla
 
-## Viikko 2
-[kattavuusraportti.png](https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/laskarit/viikko2/kattavuusraportti.png)
+```
+mvn compile exec:java -Dexec.mainClass=ruokapaivakirja.Main
+```
+
+Testit suoritetaan komennolla
+
+```
+mvn test
+```
+
+Testikattavuusraportti luodaan komennolla
+
+```
+mvn jacoco:report
+```
