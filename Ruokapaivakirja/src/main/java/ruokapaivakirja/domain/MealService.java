@@ -14,7 +14,7 @@ import ruokapaivakirja.dao.SqlMealDao;
 public class MealService {
     private MealDao mealDao;
     private DishDao dishDao;
-
+    
     public MealService(MealDao mealDao, DishDao dishDao) {
         this.mealDao = mealDao;
         this.dishDao = dishDao;

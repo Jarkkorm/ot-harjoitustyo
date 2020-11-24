@@ -2,9 +2,11 @@
 Sovelluksen avulla on mahdollista pitää ruokapäiväkirjaa 
 
 ## Dokumentaatio
-[tuntikirjanpito.md](https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/tuntikirjanpito.md)
+[tuntikirjanpito.md](https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/Ruokapaivakirja/Dokumentaatio/tuntikirjanpito.md)
 
-[vaatimusmaarittely.md](https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/vaatimusmaarittely.md)
+[vaatimusmaarittely.md](https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/Ruokapaivakirja/Dokumentaatio/vaatimusmaarittely.md)
+
+[
 
 ## Komentorivitoiminnot
 
