@@ -5,7 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
+import ruokapaivakirja.dao.SqlDishDao;
 import ruokapaivakirja.domain.MealService;
+import ruokapaivakirja.domain.Meal;
+import ruokapaivakirja.dao.SqlMealDao;
 
 public class RuokapaivakirjaUi extends Application {
     private Stage stage;
@@ -14,7 +17,9 @@ public class RuokapaivakirjaUi extends Application {
     
     @Override
     public void init() throws Exception {
-        mealService = new MealService();
+        SqlDishDao dishDao =new SqlDishDao();
+        SqlMealDao mealDao = new SqlMealDao();
+        mealService = new MealService(mealDao, dishDao);
         
         FXMLLoader sceneLoader =new FXMLLoader(getClass().getClassLoader().getResource("FXML.fxml"));
         Parent mainPane = sceneLoader.load();

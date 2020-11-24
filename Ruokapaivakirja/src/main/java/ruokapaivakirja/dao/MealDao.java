@@ -12,5 +12,6 @@ public interface MealDao {
     
     List<Meal> getAll();
     
+    void setDone(int id) throws Exception;
     
 }
