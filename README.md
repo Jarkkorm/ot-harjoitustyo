@@ -6,7 +6,7 @@ Sovelluksen avulla on mahdollista pitää ruokapäiväkirjaa
 
 [vaatimusmaarittely.md](https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/Ruokapaivakirja/Dokumentaatio/vaatimusmaarittely.md)
 
-[
+[arkkitehtuuri.md](https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/Ruokapaivakirja/Dokumentaatio/arkkitehtuuri.md)
 
 ## Komentorivitoiminnot
 
