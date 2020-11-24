@@ -1,5 +1,7 @@
 package ruokapaivakirja;
 
+import java.time.LocalDate;
+import java.time.Month;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -13,15 +15,15 @@ import ruokapaivakirja.domain.Meal;
  *
  * @author jarkko
  */
-public class DishTest {
+public class MealTest {
     private static final double DELTA = 1e-15;
     Meal meal;
     Dish dish;
     
-    public DishTest() {
+    public MealTest() {
     }
     
-     @BeforeClass
+    @BeforeClass
     public static void setUpClass() {
     }
     
@@ -32,6 +34,7 @@ public class DishTest {
     @Before
     public void setUp() {
         dish = new Dish("Ahven", 84, 17.1, 10.0, 2.1, 0.0);
+        meal = new Meal(LocalDate.of(2020, Month.MAY, 15),dish,2);
     }
     
     @After
@@ -39,32 +42,17 @@ public class DishTest {
     }
 
     @Test
-    public void dishNimiOikeinTest() {
-        assertEquals("Ahven", dish.getDescription());
+    public void mealDateOikeinTest() {
+        assertEquals(LocalDate.of(2020, Month.MAY, 15), meal.getDate());
     }
 
     @Test
-    public void dishKaloritOikeinTest() {
-        assertEquals(84, dish.getCalories(), DELTA);
+    public void mealDishDescriptionOikeinTest() {
+        assertEquals("Ahven", meal.getDish().getDescription());
     }
 
     @Test
-    public void dishProteiinitOikeinTest() {
-        assertEquals(17.1, dish.getProteins(), DELTA);
-    }
-
-    @Test
-    public void dishHiilihydraatitOikeinTest() {
-        assertEquals(10.0, dish.getCarbohydrates(), DELTA);
-    }
-    
-    @Test
-    public void dishSokeritOikeinTest() {
-        assertEquals(0.0, dish.getSugar(), DELTA);
-    }
-    
-    @Test
-    public void dishRasvatOikeinTest() {
-        assertEquals(0.0, dish.getFat(), DELTA);
+    public void mealCategoryOikeinTest() {
+        assertEquals(2, meal.getCategory());
     }
 }
