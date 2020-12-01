@@ -1,5 +1,8 @@
 package ruokapaivakirja.ui;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.Properties;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -17,8 +20,12 @@ public class RuokapaivakirjaUi extends Application {
     
     @Override
     public void init() throws Exception {
-        SqlDishDao dishDao =new SqlDishDao();
-        SqlMealDao mealDao = new SqlMealDao();
+        InputStream input = new FileInputStream("resources/config.properties");
+        Properties properties = new Properties();
+        properties.load(input);
+        String dataBase = properties.getProperty("db");
+        SqlDishDao dishDao =new SqlDishDao("dataBase");
+        SqlMealDao mealDao = new SqlMealDao("dataBase",dishDao);
         mealService = new MealService(mealDao, dishDao);
         
         FXMLLoader sceneLoader =new FXMLLoader(getClass().getClassLoader().getResource("FXML.fxml"));
