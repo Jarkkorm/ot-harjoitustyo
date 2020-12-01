@@ -1,16 +1,17 @@
 package ruokapaivakirja.dao;
 
 import java.util.List;
+import ruokapaivakirja.domain.Dish;
 import ruokapaivakirja.domain.Meal;
 /**
  *
  * @author jarkko
  */
-public interface MealDao {
+public interface MealDao<T> {
     
-    Meal create(Meal meal) throws Exception;
+    void create(Meal meal, Dish dish) throws Exception;
     
-    List<Meal> getAll();
+    List<Meal> getAll() throws Exception;
     
     void setDone(int id) throws Exception;
     
