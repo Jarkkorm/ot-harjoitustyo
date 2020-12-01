@@ -1,26 +1,35 @@
 package ruokapaivakirja.domain;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 public class Meal {
     private int id;
-    private LocalDate date;
+    private Date date;
     private Dish dish;
     private int category;
     private int done;
 
-    public Meal(LocalDate date, Dish dish, int category) {
+    public Meal(Date date, Dish dish, int category) {
         this.date = date;
         this.dish = dish;
         this.category = category;
         this.done = 0;
     }
+    
+    public Meal(int id, Date date, Dish dish, int category, int Done) {
+        this.id =id;
+        this.date = date;
+        this.dish = dish;
+        this.category = category;
+        this.done = done;
+    }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -50,6 +59,10 @@ public class Meal {
 
     public void setDone() {
         this.done = 1;
+    }
+
+    public int getDone() {
+        return done;
     }
     
 

@@ -5,23 +5,41 @@ package ruokapaivakirja.domain;
  * @author jarkko
  */
 public class Dish {
-    
+    private int id;
     private String description;
     private int calories;
     private double proteins;
-    private double carbohydrates;
+    private double carbs;
     private double sugar;
     private double fat;
 
-    public Dish(String description, int calories, double proteins, double carbohydrates, double sugar, double fat) {
+    public Dish(String description, int calories, double proteins, double carbs, double sugar, double fat) {
         this.description = description;
         this.calories = calories;
         this.proteins = proteins;
-        this.carbohydrates = carbohydrates;
+        this.carbs = carbs;
         this.sugar = sugar;
         this.sugar = fat;
     }
 
+    public Dish(int id, String description, int calories, double proteins, double carbs, double sugar, double fat) {
+        this.id = id;
+        this.description = description;
+        this.calories = calories;
+        this.proteins = proteins;
+        this.carbs = carbs;
+        this.sugar = sugar;
+        this.sugar = fat;
+    }
+    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getDescription() {
         return description;
     }
@@ -46,12 +64,12 @@ public class Dish {
         this.proteins = proteins;
     }
 
-    public double getCarbohydrates() {
-        return carbohydrates;
+    public double getCarbs() {
+        return carbs;
     }
 
-    public void setCarbohydrates(double carbohydrates) {
-        this.carbohydrates = carbohydrates;
+    public void setCarbs(double carbs) {
+        this.carbs = carbs;
     }
 
     public double getSugar() {

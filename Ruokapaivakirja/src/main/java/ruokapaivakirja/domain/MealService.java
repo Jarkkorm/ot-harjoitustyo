@@ -1,6 +1,6 @@
 package ruokapaivakirja.domain;
 
-import java.time.LocalDate;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import ruokapaivakirja.dao.DishDao;
@@ -20,15 +20,29 @@ public class MealService {
         this.dishDao = dishDao;
     }
     
-    public boolean createMeal(LocalDate date, Dish dish, int category) {
+    public boolean createMeal(Date date, Dish dish, int category, int done) {
         Meal meal = new Meal(date, dish, category);
         try {   
-            mealDao.create(meal);
+            mealDao.create(meal, dish);
         } catch (Exception ex) {
             return false;
         }
         return true;
     }
     
-
+    public List<Meal> getMeals() {
+        List<Meal> meals = new ArrayList<>();
+        try {
+            meals = mealDao.getAll();
+        } catch (Exception ex) {
+        } 
+        return meals;
+    }
+    
+    public void markDone(int id) {
+        try {
+            mealDao.setDone(id);
+        } catch (Exception ex) {
+        }
+    }
 }
