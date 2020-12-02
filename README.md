@@ -10,10 +10,10 @@ Sovelluksen avulla on mahdollista pitää ruokapäiväkirjaa
 
 ## Komentorivitoiminnot
 
-Ohjelman saa suoritettua komennolla
+Jar:in saa luotua komennolla
 
 ```
-mvn compile exec:java -Dexec.mainClass=ruokapaivakirja.Main
+mvn package
 ```
 
 Testit suoritetaan komennolla
@@ -27,3 +27,7 @@ Testikattavuusraportti luodaan komennolla
 ```
 mvn jacoco:report
 ```
+
+## Releaset
+
+(https://github.com/Jarkkorm/ot-harjoitustyo/releases/tag/viikko5)
