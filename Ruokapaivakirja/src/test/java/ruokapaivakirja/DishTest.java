@@ -55,16 +55,16 @@ public class DishTest {
 
     @Test
     public void dishHiilihydraatitOikeinTest() {
-        assertEquals(10.0, dish.getCarbohydrates(), DELTA);
+        assertEquals(10.0, dish.getCarbs(), DELTA);
     }
     
     @Test
     public void dishSokeritOikeinTest() {
-        assertEquals(0.0, dish.getSugar(), DELTA);
+        assertEquals(0.0, dish.getSugars(), DELTA);
     }
     
     @Test
     public void dishRasvatOikeinTest() {
-        assertEquals(0.0, dish.getFat(), DELTA);
+        assertEquals(0.0, dish.getFats(), DELTA);
     }
 }

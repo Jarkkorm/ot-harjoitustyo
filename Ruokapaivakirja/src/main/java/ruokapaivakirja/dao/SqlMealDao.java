@@ -33,7 +33,7 @@ public class SqlMealDao implements MealDao {
     
     private void initializeDB() throws SQLException {
         startConnection();
-        s.execute("CREATE TABLE IF NOT EXISTS Meal (id INTEGER PRIMARY KEY, date DATE, FOREIGN KEY (mealdish) REFERENCES dish(id), category INTEGER, done INTEGER);");
+        s.execute("CREATE TABLE IF NOT EXISTS Meal (id INTEGER PRIMARY KEY, date DATE, mealdish INTEGER, category INTEGER, done INTEGER, FOREIGN KEY (mealdish) REFERENCES dish(id));");
         closeConnection();
     }
 

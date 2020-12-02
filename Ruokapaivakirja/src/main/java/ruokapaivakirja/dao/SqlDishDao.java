@@ -44,7 +44,7 @@ public class SqlDishDao implements DishDao<Dish> {
         startConnection();
         ResultSet rs = s.executeQuery("SELECT * FROM dish;");
         while (rs.next()) {
-            dishes.add(new Dish(rs.getInt("id"), rs.getString("description"), rs.getInt("calories"), rs.getDouble("proteins"), rs.getDouble("carbs"), rs.getDouble("sugar"), rs.getDouble("fat")));
+            dishes.add(new Dish(rs.getInt("id"), rs.getString("description"), rs.getInt("calories"), rs.getDouble("proteins"), rs.getDouble("carbs"), rs.getDouble("sugars"), rs.getDouble("fats")));
         }
         closeConnection();
         return dishes;
@@ -53,13 +53,18 @@ public class SqlDishDao implements DishDao<Dish> {
     @Override
     public void create(Dish dish) throws SQLException {
         startConnection();
-        stmt = connection.prepareStatement("INSERT INTO dish (description, calories, proteins, carbs, sugar, fat) VALUES (?,?,?,?,?,?);");
+                try {
+        stmt = connection.prepareStatement("INSERT INTO dish (description, calories, proteins, carbs, sugars, fats) VALUES (?,?,?,?,?,?);");
+                }
+                catch (SQLException e){
+                    System.out.println(e);
+                }
         stmt.setString(1,dish.getDescription());
         stmt.setInt(2,dish.getCalories());
         stmt.setDouble(3,dish.getProteins());
         stmt.setDouble(4,dish.getCarbs());
-        stmt.setDouble(5,dish.getSugar());
-        stmt.setDouble(6,dish.getFat());
+        stmt.setDouble(5,dish.getSugars());
+        stmt.setDouble(6,dish.getFats());
         stmt.executeUpdate();
         stmt.close();
         closeConnection();
