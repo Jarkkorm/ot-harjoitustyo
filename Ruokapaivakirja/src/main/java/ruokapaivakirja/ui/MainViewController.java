@@ -54,7 +54,6 @@ public class MainViewController implements Initializable {
     @FXML
     private TableColumn<Meal, Integer> fxMealCalories;
     
-    // Changes Scene to DishScene
     public void changeToDishView(ActionEvent event) {
         application.setDishScene();
     }    
@@ -73,18 +72,15 @@ public class MainViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         mealList = FXCollections.observableArrayList();
-        //mealList = mealService.getMealList();
-        //tableView.setItems(mealList);
-
     }
+    
     public void initialize(){
 
     }
 
     @FXML
     private void addMeal(ActionEvent event) {
-        //mealList.add(new Meal(category.getText()));
-        //mealService.addToMeal(category.getText());
+
     }
 }
 

@@ -60,7 +60,7 @@ public class DishTest {
     
     @Test
     public void dishSokeritOikeinTest() {
-        assertEquals(0.0, dish.getSugars(), DELTA);
+        assertEquals(2.1, dish.getSugars(), DELTA);
     }
     
     @Test
