@@ -37,7 +37,7 @@ public class DishService {
         try {
             dishes = dishDao.getAll();
         } catch (Exception ex) {
-            System.out.println("List error: "+ex);
+            System.out.println("List error: " + ex);
         } 
         return dishes;
     }

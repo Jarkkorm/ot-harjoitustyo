@@ -17,8 +17,8 @@ public class Meal {
         this.done = 0;
     }
     
-    public Meal(int id, Date date, Dish dish, int category, int Done) {
-        this.id =id;
+    public Meal(int id, Date date, Dish dish, int category, int done) {
+        this.id = id;
         this.date = date;
         this.dish = dish;
         this.category = category;

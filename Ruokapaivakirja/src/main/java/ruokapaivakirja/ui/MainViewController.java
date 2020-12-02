@@ -58,7 +58,7 @@ public class MainViewController implements Initializable {
         application.setDishScene();
     }    
     
-    public void setMealService(MealService mealService){
+    public void setMealService(MealService mealService) {
         this.mealService = mealService;
     }
 

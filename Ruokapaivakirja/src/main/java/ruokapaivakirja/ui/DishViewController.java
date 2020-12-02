@@ -102,8 +102,8 @@ public class DishViewController implements Initializable {
         dvFats.setText("");        
     }
 
-    public void setDishService(DishService dishService){
-            this.dishService = dishService;
+    public void setDishService(DishService dishService) {
+        this.dishService = dishService;
     }
 
     public void setApplication(RuokapaivakirjaUi application) {

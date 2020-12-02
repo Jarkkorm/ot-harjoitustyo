@@ -54,12 +54,12 @@ public class SqlDishDao implements DishDao<Dish> {
     public void create(Dish dish) throws SQLException {
         startConnection();
         stmt = connection.prepareStatement("INSERT INTO dish (description, calories, proteins, carbs, sugars, fats) VALUES (?,?,?,?,?,?);");
-        stmt.setString(1,dish.getDescription());
-        stmt.setInt(2,dish.getCalories());
-        stmt.setDouble(3,dish.getProteins());
-        stmt.setDouble(4,dish.getCarbs());
-        stmt.setDouble(5,dish.getSugars());
-        stmt.setDouble(6,dish.getFats());
+        stmt.setString(1, dish.getDescription());
+        stmt.setInt(2, dish.getCalories());
+        stmt.setDouble(3, dish.getProteins());
+        stmt.setDouble(4, dish.getCarbs());
+        stmt.setDouble(5, dish.getSugars());
+        stmt.setDouble(6, dish.getFats());
         stmt.executeUpdate();
         stmt.close();
         closeConnection();
