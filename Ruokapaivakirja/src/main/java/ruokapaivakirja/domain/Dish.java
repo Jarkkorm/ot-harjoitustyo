@@ -10,26 +10,26 @@ public class Dish {
     private int calories;
     private double proteins;
     private double carbs;
-    private double sugar;
-    private double fat;
+    private double sugars;
+    private double fats;
 
-    public Dish(String description, int calories, double proteins, double carbs, double sugar, double fat) {
+    public Dish(String description, int calories, double proteins, double carbs, double sugars, double fats) {
         this.description = description;
         this.calories = calories;
         this.proteins = proteins;
         this.carbs = carbs;
-        this.sugar = sugar;
-        this.sugar = fat;
+        this.sugars = sugars;
+        this.fats = fats;
     }
 
-    public Dish(int id, String description, int calories, double proteins, double carbs, double sugar, double fat) {
+    public Dish(int id, String description, int calories, double proteins, double carbs, double sugars, double fats) {
         this.id = id;
         this.description = description;
         this.calories = calories;
         this.proteins = proteins;
         this.carbs = carbs;
-        this.sugar = sugar;
-        this.sugar = fat;
+        this.sugars = sugars;
+        this.fats = fats;
     }
     
     public int getId() {
@@ -72,19 +72,19 @@ public class Dish {
         this.carbs = carbs;
     }
 
-    public double getSugar() {
-        return sugar;
+    public double getSugars() {
+        return sugars;
     }
 
-    public void setSugar(double sugar) {
-        this.sugar = sugar;
+    public void setSugars(double sugars) {
+        this.sugars = sugars;
     }
 
-    public void setFat(double fat) {
-        this.fat = fat;
+    public void setFats(double fats) {
+        this.fats = fats;
     }    
 
-    public double getFat() {
-        return fat;
+    public double getFats() {
+        return fats;
     }
 }

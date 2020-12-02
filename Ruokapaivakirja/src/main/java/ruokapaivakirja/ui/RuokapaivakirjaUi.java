@@ -12,26 +12,39 @@ import ruokapaivakirja.dao.SqlDishDao;
 import ruokapaivakirja.domain.MealService;
 import ruokapaivakirja.domain.Meal;
 import ruokapaivakirja.dao.SqlMealDao;
+import ruokapaivakirja.domain.DishService;
 
 public class RuokapaivakirjaUi extends Application {
     private Stage stage;
     private MealService mealService;
+    private DishService dishService;
     private Scene mainScene;
+    private Scene dishScene;
+    
     
     @Override
     public void init() throws Exception {
-        InputStream input = new FileInputStream("resources/config.properties");
+        InputStream input = RuokapaivakirjaUi.class.getClassLoader().getResourceAsStream("config.properties");
         Properties properties = new Properties();
         properties.load(input);
         String dataBase = properties.getProperty("db");
         SqlDishDao dishDao =new SqlDishDao("dataBase");
         SqlMealDao mealDao = new SqlMealDao("dataBase",dishDao);
         mealService = new MealService(mealDao, dishDao);
+        dishService = new DishService(dishDao);
         
-        FXMLLoader sceneLoader =new FXMLLoader(getClass().getClassLoader().getResource("FXML.fxml"));
-        Parent mainPane = sceneLoader.load();
-        FXMLController fxmlController = sceneLoader.getController();
-        fxmlController.setMealService(mealService);
+        FXMLLoader dishSceneLoader = new FXMLLoader(getClass().getClassLoader().getResource("DishView.fxml"));
+        Parent dishPane = dishSceneLoader.load();
+        DishViewController dishViewController = dishSceneLoader.getController();
+        dishViewController.setDishService(dishService);
+        dishViewController.setApplication(this);
+        dishScene = new Scene(dishPane);
+        
+        FXMLLoader mainSceneLoader = new FXMLLoader(getClass().getClassLoader().getResource("MainView.fxml"));
+        Parent mainPane = mainSceneLoader.load();
+        MainViewController mainViewController = mainSceneLoader.getController();
+        mainViewController.setMealService(mealService);
+        mainViewController.setApplication(this);
         mainScene = new Scene(mainPane);
     }
 
@@ -43,7 +56,15 @@ public class RuokapaivakirjaUi extends Application {
             stage.show();
         }
     
-        public static void main(String[] args) {
+    public void setMainScene() {
+        stage.setScene(mainScene);
+    }
+    
+    public void setDishScene() {
+        stage.setScene(dishScene);
+    }
+    
+    public static void main(String[] args) {
            launch(args);
         }
     }
