@@ -43,6 +43,7 @@ public class RuokapaivakirjaUi extends Application {
         FXMLLoader mainSceneLoader = new FXMLLoader(getClass().getClassLoader().getResource("MainView.fxml"));
         Parent mainPane = mainSceneLoader.load();
         MainViewController mainViewController = mainSceneLoader.getController();
+        mainViewController.setDishService(dishService);
         mainViewController.setMealService(mealService);
         mainViewController.setApplication(this);
         mainScene = new Scene(mainPane);

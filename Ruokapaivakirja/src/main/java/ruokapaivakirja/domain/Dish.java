@@ -1,8 +1,8 @@
 package ruokapaivakirja.domain;
 
 /**
- *
- * @author jarkko
+ * Class that stores data of Dish
+ * 
  */
 public class Dish {
     private int id;
@@ -13,6 +13,15 @@ public class Dish {
     private double sugars;
     private double fats;
 
+    /**
+     * Creates a Dish without id
+     * @param description
+     * @param calories
+     * @param proteins
+     * @param carbs
+     * @param sugars
+     * @param fats
+     */
     public Dish(String description, int calories, double proteins, double carbs, double sugars, double fats) {
         this.description = description;
         this.calories = calories;
@@ -22,6 +31,16 @@ public class Dish {
         this.fats = fats;
     }
 
+    /**
+     * Creates a Dish with all fields
+     * @param id
+     * @param description
+     * @param calories
+     * @param proteins
+     * @param carbs
+     * @param sugars
+     * @param fats
+     */
     public Dish(int id, String description, int calories, double proteins, double carbs, double sugars, double fats) {
         this.id = id;
         this.description = description;
@@ -86,5 +105,10 @@ public class Dish {
 
     public double getFats() {
         return fats;
+    }
+    
+    @Override
+    public String toString() {
+        return this.getDescription();
     }
 }

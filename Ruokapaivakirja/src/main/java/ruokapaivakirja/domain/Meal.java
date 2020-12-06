@@ -3,21 +3,39 @@ package ruokapaivakirja.domain;
 import java.sql.Date;
 import java.time.LocalDate;
 
+/**
+ * Class that stores data of Meal
+ * 
+ */
 public class Meal {
     private int id;
     private Date date;
     private Dish dish;
-    private int category;
+    private String category;
     private int done;
 
-    public Meal(Date date, Dish dish, int category) {
+    /**
+     * Creates a Meal without id
+     * @param date
+     * @param dish
+     * @param category
+     */
+    public Meal(Date date, Dish dish, String category) {
         this.date = date;
         this.dish = dish;
         this.category = category;
         this.done = 0;
     }
     
-    public Meal(int id, Date date, Dish dish, int category, int done) {
+    /**
+     * Creates a Meal with all fields
+     * @param id
+     * @param date
+     * @param dish
+     * @param category
+     * @param done
+     */
+    public Meal(int id, Date date, Dish dish, String category, int done) {
         this.id = id;
         this.date = date;
         this.dish = dish;
@@ -41,11 +59,11 @@ public class Meal {
         this.dish = dish;
     }
 
-    public int getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(int category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 
@@ -64,6 +82,5 @@ public class Meal {
     public int getDone() {
         return done;
     }
-    
 
 }

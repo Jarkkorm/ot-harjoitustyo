@@ -82,7 +82,7 @@
             <TextField fx:id="dvFats" />
          </children>
       </VBox>
-      <TableView fx:id="tbMeals" layoutX="293.0" layoutY="79.0" prefHeight="503.0" prefWidth="503.0">
+      <TableView fx:id="tbDishTable" layoutX="293.0" layoutY="79.0" prefHeight="503.0" prefWidth="503.0">
         <columns>
             <TableColumn fx:id="colId" prefWidth="29.0" text="Id" />
           <TableColumn fx:id="colDescription" prefWidth="98.0" text="Nimi" />

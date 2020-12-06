@@ -33,7 +33,7 @@ public class SqlMealDao implements MealDao {
     
     private void initializeDB() throws SQLException {
         startConnection();
-        s.execute("CREATE TABLE IF NOT EXISTS Meal (id INTEGER PRIMARY KEY, date DATE, mealdish INTEGER, category INTEGER, done INTEGER, FOREIGN KEY (mealdish) REFERENCES dish(id));");
+        s.execute("CREATE TABLE IF NOT EXISTS Meal (id INTEGER PRIMARY KEY, date DATE, mealdish INTEGER, category TEXT, done INTEGER, FOREIGN KEY (mealdish) REFERENCES dish(id));");
         closeConnection();
     }
 
@@ -53,7 +53,7 @@ public class SqlMealDao implements MealDao {
         stmt = connection.prepareStatement("INSERT INTO meal (date, mealdish, category, done) VALUES (?,?,?,?);");
         stmt.setDate(1, meal.getDate());
         stmt.setInt(2, dish.getId());
-        stmt.setInt(3, meal.getCategory());
+        stmt.setString(3, meal.getCategory());
         stmt.setInt(4, meal.getDone());
         stmt.executeUpdate();
         stmt.close();
@@ -67,7 +67,7 @@ public class SqlMealDao implements MealDao {
         try {
             while (rs.next()) {
                 Dish dish = dishDao.read(rs.getInt("mealdish"));
-                meals.add(new Meal(rs.getInt("id"), rs.getDate("date"), dish, rs.getInt("category"), rs.getInt("done")));
+                meals.add(new Meal(rs.getInt("id"), rs.getDate("date"), dish, rs.getString("category"), rs.getInt("done")));
             }
         } catch (Exception e) {
             e.printStackTrace();

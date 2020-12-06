@@ -35,9 +35,9 @@
           </Menu>
         </menus>
       </MenuBar>
-      <SplitPane dividerPositions="0.5" layoutX="49.0" layoutY="89.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="29.0">
+      <SplitPane dividerPositions="0.38721804511278196" layoutX="49.0" layoutY="89.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="29.0">
         <items>
-          <AnchorPane fx:id="root">
+          <AnchorPane prefHeight="569.0" prefWidth="277.0">
                <children>
                   <Button layoutX="69.0" layoutY="188.0" mnemonicParsing="false" onAction="#addMeal" text="Tallenna" />
                   <VBox alignment="TOP_CENTER" layoutX="6.0" layoutY="38.0" prefHeight="142.0" prefWidth="63.0" spacing="20.0">
@@ -51,19 +51,19 @@
                      <children>
                         <DatePicker fx:id="fxDate" />
                         <ChoiceBox fx:id="fxCategory" prefWidth="150.0" />
-                        <ChoiceBox fx:id="fxMeal" prefWidth="150.0" />
+                        <ChoiceBox fx:id="fxDish" prefWidth="150.0" />
                      </children>
                   </VBox>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView fx:id="fxPlan" layoutX="54.0" layoutY="64.0" prefHeight="569.0" prefWidth="513.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="tbMealTable" layoutX="54.0" layoutY="64.0" prefHeight="569.0" prefWidth="395.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn fx:id="fxPlanDate" prefWidth="75.0" text="Päivä" />
-                        <TableColumn fx:id="fxPlanCategory" prefWidth="107.0" text="Ateria" />
-                      <TableColumn fx:id="fxPlanMeal" prefWidth="186.0" text="Ruoka" />
-                        <TableColumn fx:id="fxMealCalories" minWidth="0.0" prefWidth="144.0" text="Kalorit" />
+                      <TableColumn fx:id="tbId" prefWidth="23.0" text="Id" />
+                        <TableColumn fx:id="tbDate" prefWidth="65.0" text="Päivä" />
+                        <TableColumn fx:id="tbCategory" minWidth="0.0" prefWidth="132.0" text="Ateria" />
+                      <TableColumn fx:id="tbDish" prefWidth="174.0" text="Ruoka" />
                     </columns>
                   </TableView>
                </children>

@@ -34,7 +34,7 @@ public class MealTest {
     @Before
     public void setUp() {
         dish = new Dish("Ahven", 84, 17.1, 10.0, 2.1, 0.0);
-        meal = new Meal(Date.valueOf("2020-11-31"),dish,2);
+        meal = new Meal(Date.valueOf("2020-11-31"),dish,"aamiainen");
     }
     
     @After
@@ -53,6 +53,6 @@ public class MealTest {
 
     @Test
     public void mealCategoryOikeinTest() {
-        assertEquals(2, meal.getCategory());
+        assertEquals("aamiainen", meal.getCategory());
     }
 }

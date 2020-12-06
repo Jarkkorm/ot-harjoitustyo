@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ruokapaivakirja.domain;
 
 import java.sql.Date;
@@ -13,25 +8,43 @@ import ruokapaivakirja.dao.MealDao;
 
 /**
  *
- * @author jarkko
+ * Service class for Dish 
  */
 public class DishService {
     private DishDao dishDao;
 
+    /**
+     * Sets the to Dao use 
+     * @param dishDao Doa used for storing Dish objects
+     */
     public DishService(DishDao dishDao) {
         this.dishDao = dishDao;
     }
     
-    public boolean createDish(String description, int calories, double proteins, double carbs, double sugar, double fat) {
+    /**
+     * Creates Dish and stores it 
+     * @param description of Dish
+     * @param calories
+     * @param proteins
+     * @param carbs
+     * @param sugar
+     * @param fat
+     * @return returns created Dish
+     */
+    public Dish createDish(String description, int calories, double proteins, double carbs, double sugar, double fat) {
         Dish dish = new Dish(description, calories, proteins, carbs, sugar, fat);
         try {   
             dishDao.create(dish);
         } catch (Exception ex) {
-            return false;
+            
         }
-        return true;
+        return dish;
     }    
     
+    /**
+     * Gets a list of all Dish objects from Dao
+     * @return a list of Dishes
+     */
     public List<Dish> getDishes() {
         List<Dish> dishes = new ArrayList<>();
         try {

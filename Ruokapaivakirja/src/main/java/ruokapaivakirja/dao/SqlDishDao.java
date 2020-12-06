@@ -71,7 +71,7 @@ public class SqlDishDao implements DishDao<Dish> {
         stmt = connection.prepareStatement("SELECT * FROM dish WHERE id = ?;)");
         stmt.setInt(1, id);
         ResultSet dish = stmt.executeQuery();
-        Dish foundDish = new Dish(dish.getInt("id"), dish.getString("description"), dish.getInt("calories"), dish.getDouble("proteins"), dish.getDouble("carbs"), dish.getDouble("sugar"), dish.getDouble("fat"));
+        Dish foundDish = new Dish(dish.getInt("id"), dish.getString("description"), dish.getInt("calories"), dish.getDouble("proteins"), dish.getDouble("carbs"), dish.getDouble("sugars"), dish.getDouble("fats"));
         stmt.close();
         closeConnection();
         return foundDish;

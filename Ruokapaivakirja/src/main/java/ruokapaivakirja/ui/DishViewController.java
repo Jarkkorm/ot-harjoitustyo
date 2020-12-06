@@ -52,7 +52,7 @@ public class DishViewController implements Initializable {
     @FXML
     private TextField dvFats;
     @FXML
-    private TableView<Dish> tbMeals;
+    private TableView<Dish> tbDishTable;
     @FXML
     private TableColumn<Dish, Integer> colId;
     @FXML
@@ -81,7 +81,7 @@ public class DishViewController implements Initializable {
         colProteins.setCellValueFactory(new PropertyValueFactory<>("proteins"));
         colCarbs.setCellValueFactory(new PropertyValueFactory<>("carbs"));
         colSugars.setCellValueFactory(new PropertyValueFactory<>("sugars"));
-        colFats.setCellValueFactory(new PropertyValueFactory<>("fats"));
+        colFats.setCellValueFactory(new PropertyValueFactory<>("fats"));        
     }    
     
     // Changes Scene to MainScene
@@ -92,22 +92,28 @@ public class DishViewController implements Initializable {
 
     @FXML
     private void addDish(ActionEvent event) {
-        dishService.createDish(dvDescription.getText(), Integer.parseInt(dvCalories.getText()), Double.parseDouble(dvProteins.getText()), Double.parseDouble(dvCarbs.getText()), Double.parseDouble(dvSugars.getText()), Double.parseDouble(dvFats.getText()));
-        tbMeals.getItems().setAll(dishService.getDishes());
+        Dish addedDish = dishService.createDish(dvDescription.getText(), Integer.parseInt(dvCalories.getText()), Double.parseDouble(dvProteins.getText()), Double.parseDouble(dvCarbs.getText()), Double.parseDouble(dvSugars.getText()), Double.parseDouble(dvFats.getText()));                                                                                                   
+        dishList.add(addedDish);
         dvDescription.setText("");
         dvCalories.setText("");
         dvProteins.setText("");
         dvCarbs.setText("");
-        dvSugars.setText(""); 
-        dvFats.setText("");        
+        dvSugars.setText("");
+        dvFats.setText("");
     }
 
     public void setDishService(DishService dishService) {
         this.dishService = dishService;
+        showDishList();
     }
 
     public void setApplication(RuokapaivakirjaUi application) {
         this.application = application;
+    }
+    
+    public void showDishList() {
+        this.dishList = FXCollections.observableArrayList(dishService.getDishes());
+        tbDishTable.setItems(dishList);
     }
     
 }
