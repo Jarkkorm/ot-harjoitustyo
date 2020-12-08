@@ -45,7 +45,7 @@ public class DishTest {
 
     @Test
     public void dishKaloritOikeinTest() {
-        assertEquals(84, dish.getCalories(), DELTA);
+        assertEquals(84, dish.getCalories());
     }
 
     @Test
@@ -66,5 +66,41 @@ public class DishTest {
     @Test
     public void dishRasvatOikeinTest() {
         assertEquals(0.0, dish.getFats(), DELTA);
+    }
+    
+    @Test
+    public void setDishNimiOikeinTest() {
+        dish.setDescription("Lohi");
+        assertEquals("Lohi", dish.getDescription());
+    }
+
+    @Test
+    public void setDishKaloritOikeinTest() {
+        dish.setCalories(100);
+        assertEquals(100, dish.getCalories());
+    }
+
+    @Test
+    public void setDishProteiinitOikeinTest() {
+        dish.setProteins(18.2);
+        assertEquals(18.2, dish.getProteins(), DELTA);
+    }
+
+    @Test
+    public void setDishHiilihydraatitOikeinTest() {
+        dish.setCarbs(11.0);
+        assertEquals(11.0, dish.getCarbs(), DELTA);
+    }
+    
+    @Test
+    public void setDishSokeritOikeinTest() {
+        dish.setSugars(3.0);
+        assertEquals(3.0, dish.getSugars(), DELTA);
+    }
+    
+    @Test
+    public void setDishRasvatOikeinTest() {
+        dish.setFats(1.1);
+        assertEquals(1.1, dish.getFats(), DELTA);
     }
 }

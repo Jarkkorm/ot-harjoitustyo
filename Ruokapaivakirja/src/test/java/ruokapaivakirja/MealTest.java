@@ -55,4 +55,34 @@ public class MealTest {
     public void mealCategoryOikeinTest() {
         assertEquals("aamiainen", meal.getCategory());
     }
+    
+    @Test
+    public void setMealDateOikeinTest() {
+        meal.setDate(Date.valueOf("2020-12-11"));
+        assertEquals(Date.valueOf("2020-12-11"), meal.getDate());
+    }
+
+    @Test
+    public void setMealDishDescriptionOikeinTest() {
+        meal.setDate(Date.valueOf("2020-12-11"));
+        assertEquals("Ahven", meal.getDish().getDescription());
+    }
+
+    @Test
+    public void setMealCategoryOikeinTest() {
+        meal.setCategory("Välipala");
+        assertEquals("Välipala", meal.getCategory());
+    }
+    
+    @Test
+    public void setIdOikeinTest() {
+        meal.setId(0);
+        assertEquals(0, meal.getId());
+    }
+    
+    @Test
+    public void setDoneOikeinTest() {
+        meal.setDone();
+        assertEquals(1, meal.getDone());
+    }
 }
