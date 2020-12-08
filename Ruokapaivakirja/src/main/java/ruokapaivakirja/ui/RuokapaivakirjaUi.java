@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Properties;
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.Parent;
@@ -12,6 +13,7 @@ import ruokapaivakirja.dao.SqlDishDao;
 import ruokapaivakirja.domain.MealService;
 import ruokapaivakirja.domain.Meal;
 import ruokapaivakirja.dao.SqlMealDao;
+import ruokapaivakirja.domain.Dish;
 import ruokapaivakirja.domain.DishService;
 
 public class RuokapaivakirjaUi extends Application {
@@ -20,7 +22,9 @@ public class RuokapaivakirjaUi extends Application {
     private DishService dishService;
     private Scene mainScene;
     private Scene dishScene;
-    
+    MainViewController mainViewController;
+    DishViewController dishViewController;
+    DishListView listView = new DishListView();
     
     @Override
     public void init() throws Exception {
@@ -32,17 +36,20 @@ public class RuokapaivakirjaUi extends Application {
         SqlMealDao mealDao = new SqlMealDao("dataBase",dishDao);
         mealService = new MealService(mealDao, dishDao);
         dishService = new DishService(dishDao);
+        listView.SetDishService(dishService);
         
         FXMLLoader dishSceneLoader = new FXMLLoader(getClass().getClassLoader().getResource("DishView.fxml"));
         Parent dishPane = dishSceneLoader.load();
-        DishViewController dishViewController = dishSceneLoader.getController();
+        dishViewController = dishSceneLoader.getController();
+        dishViewController.setDishListView(listView);
         dishViewController.setDishService(dishService);
         dishViewController.setApplication(this);
         dishScene = new Scene(dishPane);
         
         FXMLLoader mainSceneLoader = new FXMLLoader(getClass().getClassLoader().getResource("MainView.fxml"));
         Parent mainPane = mainSceneLoader.load();
-        MainViewController mainViewController = mainSceneLoader.getController();
+        mainViewController = mainSceneLoader.getController();
+        mainViewController.setDishListView(listView);
         mainViewController.setDishService(dishService);
         mainViewController.setMealService(mealService);
         mainViewController.setApplication(this);

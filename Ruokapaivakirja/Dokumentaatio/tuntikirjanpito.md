@@ -13,4 +13,8 @@
 | 30.11 |  6   | Lisätty sql-toiminnallisuudet |
 | 1.12  |  5   | Korjattu virheitä ja lisätty toinen näkymä käyttöliittymään | 
 | 2.12  |  4   | Korjattu virheitä, lisätty toiminnallisuuksia ja tehty viikon 5 palautukseen liittyviä säätöjä |
-yht   |  38   | | 
+| 4.12  |  4   | Tutkittu FXML:ää ja tehty muutoksia sekä pieniä muutoksia rakenteeseen |
+| 6.12  |  4   | Muutoksia FXML:ään aloitettu JavaDoc ja lisätty testausta |
+| 7.12  |  2   | Lisätty testausta ja korjattu Checkstyle virheet |
+| 8.12  |  5   | Korjattu testusta, controller luokkia ja viikon 6 release | 
+yht   |  53   | | 

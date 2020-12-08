@@ -34,9 +34,9 @@ public class DishService {
     public Dish createDish(String description, int calories, double proteins, double carbs, double sugar, double fat) {
         Dish dish = new Dish(description, calories, proteins, carbs, sugar, fat);
         try {   
-            dishDao.create(dish);
-        } catch (Exception ex) {
-            
+            dish = dishDao.create(dish);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return dish;
     }    
@@ -49,8 +49,8 @@ public class DishService {
         List<Dish> dishes = new ArrayList<>();
         try {
             dishes = dishDao.getAll();
-        } catch (Exception ex) {
-            System.out.println("List error: " + ex);
+        } catch (Exception e) {
+            e.printStackTrace();
         } 
         return dishes;
     }

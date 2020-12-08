@@ -1,6 +1,7 @@
 package ruokapaivakirja.domain;
 
 import java.sql.Date;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,11 +26,11 @@ public class MealService {
     public MealService(MealDao mealDao, DishDao dishDao) {
         this.mealDao = mealDao;
         this.dishDao = dishDao;
-        this.categories.add( "Aamiainen" );
-        this.categories.add( "Lounas" );
-        this.categories.add( "Välipala" );
-        this.categories.add( "Päivällinen" );
-        this.categories.add( "Iltapala" );
+        this.categories.add("Aamiainen");
+        this.categories.add("Lounas");
+        this.categories.add("Välipala");
+        this.categories.add("Päivällinen");
+        this.categories.add("Iltapala");
     }
     
     /**
@@ -42,7 +43,7 @@ public class MealService {
     public Meal createMeal(Date date, Dish dish, String category) {
         Meal meal = new Meal(date, dish, category);
         try {   
-            mealDao.create(meal, dish);
+            mealDao.create(meal);
         } catch (Exception ex) {
             
         }

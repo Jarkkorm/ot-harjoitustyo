@@ -9,7 +9,7 @@ import ruokapaivakirja.domain.Meal;
  */
 public interface MealDao<T> {
     
-    void create(Meal meal, Dish dish) throws Exception;
+    void create(Meal meal) throws Exception;
     
     List<Meal> getAll() throws Exception;
     

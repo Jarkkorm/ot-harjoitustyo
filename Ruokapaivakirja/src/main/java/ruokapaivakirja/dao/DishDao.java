@@ -6,7 +6,7 @@ import ruokapaivakirja.domain.Dish;
 
 public interface DishDao<T> {
     
-    void create(Dish dish) throws Exception;
+    Dish create(Dish dish) throws Exception;
     
     List<Dish> getAll() throws Exception;
     
