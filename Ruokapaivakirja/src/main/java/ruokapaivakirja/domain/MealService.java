@@ -90,12 +90,18 @@ public class MealService {
      * @return
      * @throws Exception
      */
-    public int getDayCalories(Date date) throws Exception {
-        List<Meal> meals = mealDao.getAllOfDay(date);
+    public int getDayCalories(Date date) {
+        List<Meal> meals;
         int sum = 0;
-        for (Meal meal: meals) {
-            sum =+ meal.getDish().getCalories();
+        try {
+            meals = mealDao.getAllOfDay(date);
+            for (Meal meal: meals) {
+                sum =+ meal.getDish().getCalories();
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(MealService.class.getName()).log(Level.SEVERE, null, ex);
         }
+
         return sum;
     }
 

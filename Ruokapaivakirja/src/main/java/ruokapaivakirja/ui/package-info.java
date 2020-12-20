@@ -2,4 +2,4 @@
  * User interface 
  */
 
-package ruokapaivakirja.ui
+package ruokapaivakirja.ui;

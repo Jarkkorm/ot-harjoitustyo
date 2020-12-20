@@ -53,9 +53,8 @@ public class MealServiceTest {
     
     @Before
     public void setUp() {
-        Dish dish = new Dish("Ahven", 84, 17.1, 10.0, 2.1, 0.0);
-        dish = dishService.createDish("Ahven", 84, 17.1, 10.0, 2.1, 0.0);
-        Meal meal = mealService.createMeal(Date.valueOf("2020-11-31"), dish, "Aamiainen");
+        Dish dish = dishService.createDish("Ahven", 84, 17.1, 10.0, 2.1, 0.0);
+        Meal meal = mealService.createMeal(Date.valueOf("2020-12-20"), dish, "Aamiainen");
     }
     
     @After
@@ -73,11 +72,6 @@ public class MealServiceTest {
         
         assertArrayEquals(categories.toArray(), mealService.getCategories().toArray());
     }
-        
-    @Test
-    public void createdMealDateRight() {        
-        assertEquals(Date.valueOf("2020-11-31"), mealService.getMeals().get(0).getDate());
-    }
     
     @Test
     public void createdMealCategoryRight() {        
@@ -85,13 +79,38 @@ public class MealServiceTest {
     }
     
     @Test
-    public void createdMealDishRight() {        
+    public void createdMealDishRight() {       
         assertEquals("Ahven", mealService.getMeals().get(0).getDish().toString());
     }
     
     @Test
-    public void mealSetDone() {
+    public void mealSetDoneRight() {
         mealService.markDone(0);
         assertEquals(0, mealService.getMeals().get(0).getDone());
+    }
+
+    @Test
+    public void changeMealChangesMealDate() {
+        mealService.changeMeal(1 , Date.valueOf("2020-12-19"), mealService.getMeals().get(0).getDish(), "Aamiainen");
+        assertEquals(Date.valueOf("2020-12-19"), mealService.getMeals().get(0).getDate());
+    }
+
+    @Test
+    public void changeMealChangesMealCategory() {
+        mealService.changeMeal(1, Date.valueOf("2020-12-20"), mealService.getMeals().get(0).getDish(), "Välipala");
+        assertEquals("Välipala", mealService.getMeals().get(0).getCategory());
+    }
+
+    @Test
+    public void getDayCaloriesGetsRight() {
+        assertEquals(84, mealService.getDayCalories(Date.valueOf("2020-12-19")));
+    }    
+
+    @Test
+    public void getDoneMealsRight() {
+        Dish dish = dishService.createDish("Porkkana", 84, 17.1, 10.0, 2.1, 0.0);
+        Meal meal = mealService.createMeal(Date.valueOf("2020-12-20"), dish, "Aamiainen");
+        mealService.markDone(meal.getId());
+        assertEquals(1, mealService.getAllDone().size());
     }
 }
