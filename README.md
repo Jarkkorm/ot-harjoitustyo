@@ -47,3 +47,5 @@ mvn javadoc:javadoc
 [viikko 5](https://github.com/Jarkkorm/ot-harjoitustyo/releases/tag/viikko5)
 
 [viikko 6](https://github.com/Jarkkorm/ot-harjoitustyo/releases/tag/viikko6)
+
+[loppupalautus](https://github.com/Jarkkorm/ot-harjoitustyo/releases/tag/Loppupalautus)

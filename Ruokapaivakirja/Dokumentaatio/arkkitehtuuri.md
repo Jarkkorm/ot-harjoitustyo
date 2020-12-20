@@ -4,7 +4,7 @@
 
 Käytössä on kolmitasoinen kerrosarkkitehtuuri. Kuvassa koodin pakkausrakenne.
 
-<img src="https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/Ruokapaivakirja/Dokumentaatio/kuvat/arkkitehtuuri.png" width="160">
+<img src="https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/Ruokapaivakirja/Dokumentaatio/kuvat/arkkitehtuuri.png" width="400">
 RuokapaivakirjaUi luo sovelluksen käyttöliittymän ja käyttää apuna MainViewController, DishViewController ja DishListView luokkia. 
 Sovelluslogiikasta vastaavat MealService ja DishService jotka käyttävät luokkia Meal ja Dish. Tallennuksesta vastaavat DAO luokat ja tallennus tapahtuu SQLite tietokantaan.
 
@@ -43,8 +43,11 @@ Historia tieto saadaan Meal taulun done kentän perusteella. Jos Done on 0 niin 
 **Ruokalajin luominen**
 
 Käyttäjä syöttää ruokalajin tiedot ja painaa lisää painiketta dishService luokka vastaa ruokalajin luomisesta ja tallentamisesta DishDao luokan kautta.
-<img src="https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/Ruokapaivakirja/Dokumentaatio/kuvat/createdish.png" width="2000">
+
+<img src="https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/Ruokapaivakirja/Dokumentaatio/kuvat/createdish.png" width="400">
 
 **Aterian luominen**
-Käyttäjä valitsee aterialle päivämäärän, kategorian ja ruokalajin sekä painaa tallenna nappia. MealService luokka vastaa aterian luomisesta ja tallentamisesta MealDao luokan kautta 
-<img src="https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/Ruokapaivakirja/Dokumentaatio/kuvat/createmeal.png" width="200">
+Käyttäjä valitsee aterialle päivämäärän, kategorian ja ruokalajin sekä painaa tallenna nappia. 
+MealService luokka vastaa aterian luomisesta ja tallentamisesta MealDao luokan kautta 
+
+<img src="https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/Ruokapaivakirja/Dokumentaatio/kuvat/createmeal.png" width="400">
