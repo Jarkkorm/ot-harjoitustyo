@@ -7,14 +7,14 @@ Sovelluksen avulla on mahdollista tehdä ruokasuunnitelma ja seurata sen toteutu
 Sovelluksella on vain normaali käyttäjä käyttäjärooli.
 
 ## Perusversion toiminnallisuus
-- Sovelluksella on graafinen käyttöliittymä **aloitettu**
-- Käyttäjä voi syöttää perustiedot
-- Käyttäjä voi lisätä ja muokata ruokalajeja
-- Käyttäjä voi tehdä päivittäisen ja viikottaisen suunnitelman.
-- Tiedot tallennetaan tietokantaan  **aloitettu**
+- Sovelluksella on graafinen käyttöliittymä
+- Käyttäjä voi lisätä/muokata/poistaa aterioita päivämäärän perusteella
+- Aterialla on kategoria ja ruokalaji
+- Päivän kokonais kalorimäärän näkee suunnitelmaa tehdessä
+- Käyttäjä voi lisätä ruokalajeja
+- Syötyjä aterioita näkee listassa
+- Tiedot tallennetaan tietokantaan
 
 ## Jatkokehitys
-- Suunitelman toteutumista voi seurata.
+- Raportointia voisi kehittää
 - Ohjelma näyttää suunnitelman mukaisten aterioiden kalorit ja ravintoarvot.
-- Painon voi merkitä ja seurata sen kehittymistä.
-
