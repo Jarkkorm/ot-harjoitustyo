@@ -29,11 +29,11 @@ public class Meal {
     
     /**
      * Creates a Meal with all fields
-     * @param id
+     * @param i
      * @param date
      * @param dish
-     * @param category
-     * @param done
+     * @param string
+     * @param i1
      */
     public Meal(int id, Date date, Dish dish, String category, int done) {
         this.id = id;
@@ -43,42 +43,81 @@ public class Meal {
         this.done = done;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getDate() {
         return date;
     }
 
+    /**
+     *
+     * @param date
+     */
     public void setDate(Date date) {
         this.date = date;
     }
 
+    /**
+     *
+     * @return
+     */
     public Dish getDish() {
         return dish;
     }
 
+    /**
+     *
+     * @param dish
+     */
     public void setDish(Dish dish) {
         this.dish = dish;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCategory() {
         return category;
     }
 
+    /**
+     *
+     * @param category
+     */
     public void setCategory(String category) {
         this.category = category;
     }
 
+    /**
+     *
+     * @param id
+     */
     public void setId(int id) {
         this.id = id;
     }
     
+    /**
+     *
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     *
+     */
     public void setDone() {
         this.done = 1;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getDone() {
         return done;
     }

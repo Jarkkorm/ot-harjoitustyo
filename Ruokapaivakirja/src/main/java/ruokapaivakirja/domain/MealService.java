@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import ruokapaivakirja.dao.DishDao;
 import ruokapaivakirja.dao.MealDao;
 import ruokapaivakirja.dao.SqlMealDao;
@@ -34,7 +36,7 @@ public class MealService {
     }
     
     /**
-     * Creates Meal and stores it 
+     * Creates Meal and stores it
      * @param date date of meal
      * @param dish Dish connected to meal
      * @param category meals category
@@ -43,7 +45,7 @@ public class MealService {
     public Meal createMeal(Date date, Dish dish, String category) {
         Meal meal = new Meal(date, dish, category);
         try {   
-            mealDao.create(meal);
+            meal = mealDao.create(meal);
         } catch (Exception ex) {
             
         }
@@ -80,6 +82,65 @@ public class MealService {
      */
     public List<String> getCategories() {
         return this.categories;
+    }
+ 
+    /**
+     * Gets sum of calories from dates meals
+     * @param date
+     * @return
+     * @throws Exception
+     */
+    public int getDayCalories(Date date) throws Exception {
+        List<Meal> meals = mealDao.getAllOfDay(date);
+        int sum = 0;
+        for (Meal meal: meals) {
+            sum =+ meal.getDish().getCalories();
+        }
+        return sum;
+    }
+
+    /**
+     * Changes meal
+     * @param id
+     * @param date
+     * @param dish
+     * @param category
+     * @return all meals
+     */
+    public List<Meal> changeMeal(int id, Date date, Dish dish, String category) {
+        Meal meal = new Meal(id, date, dish, category, 0);
+        try {
+            mealDao.updateMeal(meal);
+        } catch (Exception ex) {
+            Logger.getLogger(MealService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return getMeals();
+    }
+
+    /**
+     * Removes meal with id
+     * @param id
+     */
+    public void deleteMeal(int id) {
+        try {
+            mealDao.removeMeal(id);
+        } catch (Exception ex) {
+            Logger.getLogger(MealService.class.getName()).log(Level.SEVERE, null, ex);
+        }        
+    }
+    
+     /**
+     * Gets a list of all done Meal objects from Dao
+     * @return list of Meals
+     */
+    public List<Meal> getAllDone() {
+        List<Meal> meals = new ArrayList<>();
+        try {
+            meals = mealDao.getAllDone();
+        } catch (Exception ex) {
+        } 
+        return meals;
     }
     
 }

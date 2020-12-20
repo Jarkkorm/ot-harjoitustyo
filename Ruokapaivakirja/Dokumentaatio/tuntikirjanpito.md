@@ -16,5 +16,10 @@
 | 4.12  |  4   | Tutkittu FXML:ää ja tehty muutoksia sekä pieniä muutoksia rakenteeseen |
 | 6.12  |  4   | Muutoksia FXML:ään aloitettu JavaDoc ja lisätty testausta |
 | 7.12  |  2   | Lisätty testausta ja korjattu Checkstyle virheet |
-| 8.12  |  5   | Korjattu testusta, controller luokkia ja viikon 6 release | 
-yht   |  53   | | 
+| 8.12  |  5   | Korjattu testausta, controller luokkia ja viikon 6 release | 
+|15.12  |  3   | Pieniä korjauksia ja näkymien muutoksia |
+|16.12  |  3   | Lisätty muokkaa ja poista toiminnallisuudet |
+|17.12  |  3   | Lisätty raportit näkymä |
+|18.12  |  2   | Muutettu toiminnallisuuksia |
+|19.12  |  1   | Testausta ja Checkstyleä|
+yht   |  65   | | 

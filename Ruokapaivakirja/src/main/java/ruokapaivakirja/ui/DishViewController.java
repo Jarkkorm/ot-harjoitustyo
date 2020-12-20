@@ -18,8 +18,7 @@ import ruokapaivakirja.domain.DishService;
 
 /**
  * FXML Controller class
- *
- * @author jarkko
+ * Controls ruokalajit view
  */
 public class DishViewController implements Initializable {
     private DishService dishService;
@@ -70,13 +69,11 @@ public class DishViewController implements Initializable {
         colSugars.setCellValueFactory(new PropertyValueFactory<>("sugars"));
         colFats.setCellValueFactory(new PropertyValueFactory<>("fats"));        
     }    
-    
-    // Changes Scene to MainScene
-    @FXML
-    public void changeToMainView(ActionEvent event) throws IOException {
-        application.setMainScene();
-    }
 
+    /**
+     * When button clicked sends fields information to dishservice
+     * for creation of new dish.
+     */
     @FXML
     private void addDish(ActionEvent event) {
         Dish addedDish = dishService.createDish(dvDescription.getText(), Integer.parseInt(dvCalories.getText()), Double.parseDouble(dvProteins.getText()), Double.parseDouble(dvCarbs.getText()), Double.parseDouble(dvSugars.getText()), Double.parseDouble(dvFats.getText()));                                                                                                   
@@ -89,21 +86,60 @@ public class DishViewController implements Initializable {
         dvFats.setText("");
     }
 
+    /**
+     *
+     * @param dishService
+     */
     public void setDishService(DishService dishService) {
         this.dishService = dishService;
         showDishList();
     }
 
+    /**
+     *
+     * @param application
+     */
     public void setApplication(RuokapaivakirjaUi application) {
         this.application = application;
     }
     
+    /**
+     * Sets Dish item to DishTable
+     */
     public void showDishList() {
         tbDishTable.setItems(dishList);
     }
 
     void setDishListView(DishListView listView) {
         this.dishList = listView.getDishList();
+    }
+
+    /**
+     * Asks application change scene to mainview
+     * @param event
+     * @throws IOException
+     */
+    @FXML
+    public void changeToMainView(ActionEvent event) throws IOException {
+        application.setMainScene();
+    }
+
+    /**
+     * Asks application change scene to reportsview
+     * @param event
+     */
+    @FXML
+    public void changeToReportsView(ActionEvent event) {
+        application.setReportsScene();
+    }
+
+    /**
+     * Closes application
+     * @param event
+     */
+    @FXML
+    private void closeApplication(ActionEvent event) {
+        System.exit(0);
     }
     
 }

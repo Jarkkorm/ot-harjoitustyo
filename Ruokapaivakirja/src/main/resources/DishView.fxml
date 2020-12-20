@@ -25,7 +25,8 @@
             <Menu mnemonicParsing="false" text="Näkymä">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#changeToMainView" text="Päiväkirja" />
-                  <MenuItem mnemonicParsing="false" text="Ateriat" />
+                  <MenuItem mnemonicParsing="false" text="Ruokalajit" />
+                  <MenuItem mnemonicParsing="false" onAction="#changeToReportsView" text="Historia" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Apua">

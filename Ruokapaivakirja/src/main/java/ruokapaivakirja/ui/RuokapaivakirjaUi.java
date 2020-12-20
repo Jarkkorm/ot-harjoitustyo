@@ -16,16 +16,25 @@ import ruokapaivakirja.dao.SqlMealDao;
 import ruokapaivakirja.domain.Dish;
 import ruokapaivakirja.domain.DishService;
 
+/**
+ * Creates programs ui
+ */
 public class RuokapaivakirjaUi extends Application {
     private Stage stage;
     private MealService mealService;
     private DishService dishService;
     private Scene mainScene;
     private Scene dishScene;
+    private Scene reportsScene;
     MainViewController mainViewController;
     DishViewController dishViewController;
+    ReportsViewController reportsViewController;
     DishListView listView = new DishListView();
     
+    /**
+     *
+     * @throws Exception
+     */
     @Override
     public void init() throws Exception {
         InputStream input = RuokapaivakirjaUi.class.getClassLoader().getResourceAsStream("config.properties");
@@ -36,7 +45,7 @@ public class RuokapaivakirjaUi extends Application {
         SqlMealDao mealDao = new SqlMealDao("dataBase",dishDao);
         mealService = new MealService(mealDao, dishDao);
         dishService = new DishService(dishDao);
-        listView.SetDishService(dishService);
+        listView.setDishService(dishService);
         
         FXMLLoader dishSceneLoader = new FXMLLoader(getClass().getClassLoader().getResource("DishView.fxml"));
         Parent dishPane = dishSceneLoader.load();
@@ -54,8 +63,20 @@ public class RuokapaivakirjaUi extends Application {
         mainViewController.setMealService(mealService);
         mainViewController.setApplication(this);
         mainScene = new Scene(mainPane);
+        
+        FXMLLoader reportsSceneLoader = new FXMLLoader(getClass().getClassLoader().getResource("ReportsView.fxml"));
+        Parent reportsPane = reportsSceneLoader.load();
+        reportsViewController = reportsSceneLoader.getController();
+        reportsViewController.setMealService(mealService);
+        reportsViewController.setApplication(this);
+        reportsScene = new Scene(reportsPane);
     }
 
+    /**
+     * Starts application
+     * @param stage
+     * @throws Exception
+     */
     @Override
     public void start(Stage stage) throws Exception {
             this.stage = stage;
@@ -64,15 +85,33 @@ public class RuokapaivakirjaUi extends Application {
             stage.show();
         }
     
+    /**
+     * Changes scene to MainScene
+     */
     public void setMainScene() {
         stage.setScene(mainScene);
     }
     
+    /**
+     *  Changes scene to DishScene
+     */
     public void setDishScene() {
         stage.setScene(dishScene);
     }
+
+    /**
+     *  Changes scene to ReportsScene
+     */
+    public void setReportsScene() {
+        stage.setScene(reportsScene);
+    }
     
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
            launch(args);
         }
+
     }

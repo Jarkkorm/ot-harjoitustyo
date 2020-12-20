@@ -51,62 +51,122 @@ public class Dish {
         this.fats = fats;
     }
     
+    /**
+     *
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     */
     public void setId(int id) {
         this.id = id;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     *
+     * @param description
+     */
     public void setDescription(String description) {
         this.description = description;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getCalories() {
         return calories;
     }
 
+    /**
+     *
+     * @param calories
+     */
     public void setCalories(int calories) {
         this.calories = calories;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getProteins() {
         return proteins;
     }
 
+    /**
+     *
+     * @param proteins
+     */
     public void setProteins(double proteins) {
         this.proteins = proteins;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getCarbs() {
         return carbs;
     }
 
+    /**
+     *
+     * @param carbs
+     */
     public void setCarbs(double carbs) {
         this.carbs = carbs;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getSugars() {
         return sugars;
     }
 
+    /**
+     *
+     * @param sugars
+     */
     public void setSugars(double sugars) {
         this.sugars = sugars;
     }
 
+    /**
+     *
+     * @param fats
+     */
     public void setFats(double fats) {
         this.fats = fats;
     }    
 
+    /**
+     *
+     * @return
+     */
     public double getFats() {
         return fats;
     }
     
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return this.getDescription();

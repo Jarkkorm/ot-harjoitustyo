@@ -6,8 +6,7 @@ import java.util.List;
 import ruokapaivakirja.domain.Dish;
 
 /**
- *
- * @author jarkko
+ * Implements DishDao
  */
 public class SqlDishDao implements DishDao<Dish> {
     
@@ -17,28 +16,48 @@ public class SqlDishDao implements DishDao<Dish> {
     private Statement s;
     private List<Dish> dishes;
     
+    /**
+     * Creates new SqlDishDao with given parameters
+     * @param dbURL
+     * @throws SQLException
+     */
     public SqlDishDao(String dbURL) throws SQLException {
         this.dbURL = dbURL;
         initializeDB();
         dishes = new ArrayList<>();
     }
 
+    /**
+     * Initializes new table for dishes
+     * @throws SQLException
+     */    
     private void initializeDB() throws SQLException {
         startConnection();
         s.execute("CREATE TABLE IF NOT EXISTS dish (id INTEGER PRIMARY KEY, description TEXT NOT NULL, calories INTEGER, proteins REAL, carbs REAL, sugars REAL, fats REAL);");
         closeConnection();
     }
 
+    /**
+     * Starts new connection to the database.
+     */
     private void startConnection() throws SQLException {
         connection = DriverManager.getConnection("jdbc:sqlite:" + dbURL);
         s = connection.createStatement();
     }
 
+    /**
+     * Closes connection to the database.
+     */    
     private void closeConnection() throws SQLException {
         s.close();
         connection.close();
     }
     
+    /**
+     *
+     * @return
+     * @throws SQLException
+     */
     @Override
     public List<Dish> getAll() throws SQLException {
         startConnection();
@@ -50,6 +69,12 @@ public class SqlDishDao implements DishDao<Dish> {
         return dishes;
     }
 
+    /**
+     * Stores new dish to database and returns it with id
+     * @param dish
+     * @return
+     * @throws SQLException
+     */
     @Override
     public Dish create(Dish dish) throws SQLException {
         startConnection();
@@ -66,6 +91,12 @@ public class SqlDishDao implements DishDao<Dish> {
         return new Dish(id, dish.getDescription(), dish.getCalories(), dish.getProteins(), dish.getCarbs(), dish.getSugars(), dish.getFats());
     }
 
+    /**
+     * Gets dish with specified id
+     * @param id
+     * @return
+     * @throws Exception
+     */
     @Override
     public Dish read(int id) throws Exception {
         startConnection();
