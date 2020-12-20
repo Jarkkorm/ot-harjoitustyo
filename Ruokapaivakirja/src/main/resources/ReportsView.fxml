@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ruokapaivakirja.ui.ReportsViewController">
+   <children>
+      <MenuBar layoutX="4.0" layoutY="-7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Tiedosto">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#closeApplication" text="Sulje" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Näkymä">
+            <items>
+              <MenuItem id="planMenu" mnemonicParsing="false" onAction="#changeToMainView" text="Päiväkirja" />
+                  <MenuItem id="mealsMenu" mnemonicParsing="false" onAction="#changeToDishView" text="Ruokalajit" />
+                  <MenuItem mnemonicParsing="false" text="Raportit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Apua">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TableView fx:id="tbDoneTable" layoutX="25.0" layoutY="165.0" prefHeight="404.0" prefWidth="741.0">
+        <columns>
+            <TableColumn fx:id="tbId" prefWidth="23.0" text="Id" />
+            <TableColumn fx:id="tbDate" prefWidth="65.0" text="Päivä" />
+            <TableColumn fx:id="tbCategory" minWidth="0.0" prefWidth="132.0" text="Ateria" />
+            <TableColumn fx:id="tbDish" prefWidth="174.0" text="Ruoka" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
